@@ -9,6 +9,10 @@
     font-family: poppins;
 }
 
+#logo{
+    width: 343px;
+}
+/* content alignment */
 #login_form{
     display: flex;
     justify-content: center;
@@ -16,27 +20,64 @@
     align-items: center;
     height: 100vh;
 }
-#logo{
-    width: 343px;
+#register_form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
 }
+
 /* Email and password styling */
 .container_input_login{
     display: flex;
     flex-direction: column;
     font-weight: 400;
-   
+    
+    
     input{
         width: 353px;
         height: 46px;
         padding-left: 10px;
-
+    
+        
         background: #C1C0BC;
         border: none;
         outline: none;
-
+        position: relative;
+        
     }
-
+    
 }
+#password, #confirm_password{
+    position: relative;
+}
+#visibility_off{
+    position: absolute;
+    right: 0;
+    padding-right: 11px;
+    z-index: 1000;
+    top: 50%;
+    cursor: pointer;
+}
+#visibility_off2{
+    position: absolute;
+    right: 0;
+    padding-right: 11px;
+    z-index: 1000;
+    top: 50%;
+    cursor: pointer;
+}
+#visibility_on2{
+    background-image: url(../icons/visibility_on.svg);
+    position: absolute;
+    right: 0;
+    padding-right: 11px;
+    z-index: 1000;
+    top: 50%;
+    cursor: pointer;
+}
+
 #email{
     margin-top: 32px;
 }
@@ -50,8 +91,17 @@
     a{
         text-decoration: none;
         color: black;
-    }
 
+       
+    }
+    span{
+        transition: 300ms;
+    }
+    span:hover{
+        background-color: #C1C0BC ;
+        padding: 5px;
+       
+    }
     button{
         width: 353px;
         height: 60px;
@@ -65,12 +115,49 @@
         color: #000;
         text-align: center;
         font-family: Poppins;
-        font-size: 32px;
+        font-size: clamp(18px,2vw,32px);
         font-style: normal;
         font-weight: 700;
         line-height: normal;
-
+        transition: 300ms;
        
     }
+    button:hover{
+        background: #e2ba62;
+    }
     
+}
+
+@media screen and (max-width:375px){
+    .container_input_login{
+        margin: 0 auto;
+       
+        input{
+            width: 80vw;
+            
+            
+    
+        }
+    
+    }
+    .action_buttons{
+        
+        margin: 0 auto;
+        button{
+            width: 80vw;
+            margin-top: 22px;
+            
+            
+        }
+    }
+    #logo{
+        width: 80%;
+        margin: 0 auto;
+    }
+    #login{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0 auto;
+    }
 }

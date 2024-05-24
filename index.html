@@ -13,27 +13,29 @@
 <body>
     <form action="" id="login_form">
         <div id="login">
-            <img id="logo" src="assets/images/logo_estoque.svg" alt="imagem ilustratíva Akm estoque.">
+            <a href="index.html"><img id="logo" src="assets/images/logo_estoque.svg" alt="imagem ilustratíva Akm estoque."></a>
             <!-- Campo de Email -->
             <div class="container_input_login" id="email">
                 <label for="">Email</label>
-                <input type="email" placeholder="Digite seu email" id="user_email">
+                <input required type="email" placeholder="Digite seu email" id="user_email">
             </div>
             <!-- Campo de Senha -->
             <div class="container_input_login" id="password">
+                <img src="../assets/icons/visibility_off.svg" alt="icone de senha não vísivel" id="visibility_off">
                 <label for="">Senha</label>
-                <input type="password" placeholder="Digite sua senha" id="user_password">
+                <input type="password" placeholder="Digite sua senha" id="user_password" required>
             </div>
             <!-- Botões de Ação -->
             <div class="action_buttons">
-                <button>Entrar</button>
+                <button id="btn_login">Entrar</button>
                 <a href="pages/register.html"><span>Cadastre-se</span></a>
-                <span>Esqueci minha senha</span>
+                <a href=""><span>Esqueci minha senha</span></a>
             </div>
         </div>
     </form>
     
     <!-- Link com o JavaScript --> 
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/autenticacaologin.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html> 

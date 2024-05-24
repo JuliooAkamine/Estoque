@@ -11,27 +11,30 @@
     
 </head>
 <body>
-    <form action="" id="login_form">
+    <form action="" id="register_form">
         <div id="login">
             <img id="logo" src="../assets/images/logo_estoque.svg" alt="imagem ilustratíva Akm estoque.">
             <!-- Campo de Email -->
             <div class="container_input_login" id="email">
                 <label for="">Email</label>
-                <input type="email" placeholder="Digite seu email" id="user_email">
+                <input required type="email" placeholder="Digite seu email" id="user_email_register">
             </div>
             <!-- Campo de Senha -->
             <div class="container_input_login" id="password">
+                <img src="../assets/icons/visibility_off.svg" alt="icone de senha não vísivel" id="visibility_off">
                 <label for="">Senha</label>
-                <input type="password" placeholder="Digite sua senha" id="user_password">
+                <input required type="password" placeholder="Digite sua senha" id="user_password_register" minlength="5">
             </div>
             <!-- Campo de confirmação de senha -->
             <div class="container_input_login" id="confirm_password">
+                
+                <img src="../assets/icons/visibility_off.svg" alt="icone de senha não vísivel" id="visibility_off2">
                 <label for="">Senha</label>
-                <input type="password" placeholder="Confirme sua senha" id="user_password_confirmed">
+                <input required type="password" placeholder="Confirme sua senha" id="user_password_confirmed" minlength="5">
             </div>
             <!-- Botões de Ação -->
             <div class="action_buttons">
-                <button>Cadastrar</button>
+                <button id="btn_register">Cadastrar</button>
                 <a href="../index.html"><span>Entrar</span></a>
         
             </div>
@@ -39,6 +42,8 @@
     </form>
     
     <!-- Link com o JavaScript --> 
-    <script src="assets/js/script.js"></script>
+    <script src="../assets/js/registrodeusuario.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 </html> 
