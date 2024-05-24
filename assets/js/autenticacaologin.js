@@ -53,9 +53,9 @@ console.log(usuario.passwordUser)
 const btnVisibilityOFF = document.getElementById("visibility_off")
 btnVisibilityOFF.addEventListener("click", function(){
     if(btnVisibilityOFF.src.endsWith("visibility_on.svg")){
-        btnVisibilityOFF.src = "../assets/icons/visibility_off.svg"
+        btnVisibilityOFF.src = "assets/icons/visibility_off.svg"
         document.getElementById("user_password").type = "password"
     } else {
-        btnVisibilityOFF.src = "../assets/icons/visibility_on.svg"
+        btnVisibilityOFF.src = "assets/icons/visibility_on.svg"
         document.getElementById("user_password").type = "text"
     }})
