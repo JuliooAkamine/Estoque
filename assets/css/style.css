@@ -1,0 +1,76 @@
+/* Importando font family poppins */
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Css globais */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+}
+
+#login_form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+#logo{
+    width: 343px;
+}
+/* Email and password styling */
+.container_input_login{
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+   
+    input{
+        width: 353px;
+        height: 46px;
+        padding-left: 10px;
+
+        background: #C1C0BC;
+        border: none;
+        outline: none;
+
+    }
+
+}
+#email{
+    margin-top: 32px;
+}
+/* enter styling */
+
+.action_buttons{
+    display: flex;
+    flex-direction: column;
+    margin-top: 22px;
+
+    a{
+        text-decoration: none;
+        color: black;
+    }
+
+    button{
+        width: 353px;
+        height: 60px;
+        margin-bottom: 11px;
+
+        background: #F3C869;
+        border: none;
+        outline: none;
+        cursor: pointer;
+
+        color: #000;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+
+       
+    }
+    
+}
