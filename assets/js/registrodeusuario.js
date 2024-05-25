@@ -32,7 +32,10 @@ cadastrar.addEventListener("click", function(event){
     const passwordConfirmed = document.getElementById("user_password_confirmed").value
 
     if(email === "" || password === "" || passwordConfirmed === ""){
-        alert("preencha todos os campos")
+        Swal.fire({
+            title: "Preencha todos os campos",
+            icon: "warning"
+          });
     }else{
         if(password === passwordConfirmed){
             var usuarios = localStorage.getItem('usuarios') ? JSON.parse(localStorage.getItem('usuarios')) : [];
@@ -52,7 +55,10 @@ cadastrar.addEventListener("click", function(event){
     
             console.log(usuario)
         }else{
-            alert("Senha Incorreta")
+            Swal.fire({
+                title: "Senha incorreta",
+                icon: "error"
+              });
         }
     }
 

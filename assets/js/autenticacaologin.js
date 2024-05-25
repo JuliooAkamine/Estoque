@@ -14,7 +14,10 @@ let email = document.getElementById("user_email").value
 let password = document.getElementById("user_password").value
 
 if(email ===  "" || password === ""){
-    alert("Preencha todos os campos")
+    Swal.fire({
+        title: "Preencha todos os campos",
+        icon: "warning"
+      });
 }else{
     // Verificar se existe um usuário com o email fornecido
     let usuarioEncontrado = usuario.find(function(user) {
@@ -35,10 +38,16 @@ if(email ===  "" || password === ""){
     
            
         } else {
-            alert("Senha incorreta.");
+            Swal.fire({
+                title: "Senha incorreta",
+                icon: "error"
+              });
         }
     } else {
-        alert("Email não cadastrado.");
+        Swal.fire({
+            title: "Email não cadastrado",
+            icon: "warning"
+          });
     }
 }
 
