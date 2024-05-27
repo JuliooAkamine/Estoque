@@ -6,10 +6,9 @@ console.log(usuario)
 // Autenticando Usuario
 const btnLogin = document.getElementById("btn_login")
 
-
-
 btnLogin.addEventListener("click", function(event){
-    event.preventDefault()
+
+event.preventDefault()
 let email = document.getElementById("user_email").value
 let password = document.getElementById("user_password").value
 
@@ -33,7 +32,7 @@ if(email ===  "" || password === ""){
               });
 
               setTimeout(() => {
-                window.location.replace("../pages/home.html")
+                window.location.replace("pages/home.html")
               }, 1000);
     
            

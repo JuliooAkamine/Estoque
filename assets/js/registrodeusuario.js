@@ -94,6 +94,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const isLoggedIn = localStorage.getItem('isLoggedIn');
 
     if (isLoggedIn) {
-        window.location.href = "home.html"; // Altere "home.html" para o caminho correto da sua página inicial
+        window.location.href = "pages/home.html"; // Altere "home.html" para o caminho correto da sua página inicial
     }
 });
