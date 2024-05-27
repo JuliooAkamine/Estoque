@@ -75,7 +75,8 @@ cadastrar.addEventListener("click", function(event) {
 
     Swal.fire({
         title: "Usuário cadastrado com sucesso",
-        icon: "success"
+        icon: "success",
+        showConfirmButton: false,
     });
     setTimeout(() => {
          // Redirecionar para a página inicial após o cadastro

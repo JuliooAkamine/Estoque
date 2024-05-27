@@ -36,7 +36,8 @@ btnLogin.addEventListener("click", function(event) {
             if (usuarioEncontrado.passwordUser === password) {
                 Swal.fire({
                     title: "Autenticação bem sucedida",
-                    icon: "success"
+                    icon: "success",
+                    showConfirmButton: false
                 });
 
                 setTimeout(() => {
