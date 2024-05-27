@@ -80,11 +80,10 @@ cadastrar.addEventListener("click", function(event) {
 
     console.log(novoUsuario);
 
-    // Armazenar indicador de login
-    localStorage.setItem('isLoggedIn', true);
+    
 
     // Redirecionar para a página inicial após o cadastro
-    window.location.href = "home.html"; // Altere "home.html" para o caminho correto da sua página inicial
+    window.location.href = "index.html"; // Altere "home.html" para o caminho correto da sua página inicial
 
     event.preventDefault(); // Impedir o envio do formulário
 });

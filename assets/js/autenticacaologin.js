@@ -34,6 +34,9 @@ if(email ===  "" || password === ""){
               setTimeout(() => {
                 window.location.replace("pages/home.html")
               }, 1000);
+
+              // Armazenar indicador de login
+    localStorage.setItem('isLoggedIn', true);
     
            
         } else {
