@@ -67,3 +67,12 @@ btnVisibilityOFF.addEventListener("click", function(){
         btnVisibilityOFF.src = "assets/icons/visibility_on.svg"
         document.getElementById("user_password").type = "text"
     }})
+
+    // Verificar se o usuário está logado e redirecioná-lo para a página inicial
+document.addEventListener("DOMContentLoaded", function() {
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+    if (isLoggedIn) {
+        window.location.href = "pages/home.html"; // Altere "home.html" para o caminho correto da sua página inicial
+    }
+});

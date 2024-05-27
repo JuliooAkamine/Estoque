@@ -89,11 +89,4 @@ cadastrar.addEventListener("click", function(event) {
     event.preventDefault(); // Impedir o envio do formulário
 });
 
-// Verificar se o usuário está logado e redirecioná-lo para a página inicial
-document.addEventListener("DOMContentLoaded", function() {
-    const isLoggedIn = localStorage.getItem('isLoggedIn');
 
-    if (isLoggedIn) {
-        window.location.href = "pages/home.html"; // Altere "home.html" para o caminho correto da sua página inicial
-    }
-});
