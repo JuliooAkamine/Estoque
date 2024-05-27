@@ -77,13 +77,16 @@ cadastrar.addEventListener("click", function(event) {
         title: "Usuário cadastrado com sucesso",
         icon: "success"
     });
+    setTimeout(() => {
+         // Redirecionar para a página inicial após o cadastro
+    window.location.href = "../index.html"; 
+    }, 2000);
 
     console.log(novoUsuario);
 
     
 
-    // Redirecionar para a página inicial após o cadastro
-    window.location.href = "index.html"; // Altere "home.html" para o caminho correto da sua página inicial
+   
 
     event.preventDefault(); // Impedir o envio do formulário
 });

@@ -36,7 +36,7 @@ if(email ===  "" || password === ""){
               }, 1000);
 
               // Armazenar indicador de login
-    localStorage.setItem('isLoggedIn', true);
+             localStorage.setItem('isLoggedIn', true);
     
            
         } else {
