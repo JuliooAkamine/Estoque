@@ -1,77 +1,78 @@
-//Resgatando array de usuarios no localstorage
-let usuariosJSON = localStorage.getItem("usuarios");
-let usuario = JSON.parse(usuariosJSON)
-console.log(usuario)
-
 // Autenticando Usuario
-const btnLogin = document.getElementById("btn_login")
+const btnLogin = document.getElementById("btn_login");
 
-btnLogin.addEventListener("click", function(event){
+btnLogin.addEventListener("click", function(event) {
+    event.preventDefault();
 
-event.preventDefault()
-let email = document.getElementById("user_email").value
-let password = document.getElementById("user_password").value
+    // Resgatando array de usuários no localStorage
+    let usuariosJSON = localStorage.getItem("usuarios");
 
-if(email ===  "" || password === ""){
-    Swal.fire({
-        title: "Preencha todos os campos",
-        icon: "warning"
-      });
-}else{
-    // Verificar se existe um usuário com o email fornecido
-    let usuarioEncontrado = usuario.find(function(user) {
-    return user.emailUser === email;
-});
+    if (usuariosJSON === null) {
+        Swal.fire({
+            title: "Nenhum usuário cadastrado",
+            icon: "warning"
+        });
+        return;
+    }
 
-    if (usuarioEncontrado) {
-        // Se o usuário for encontrado, verificar se a senha está correta
-        if (usuarioEncontrado.passwordUser === password) {
-            Swal.fire({
-                title: "Autenticação bem sucedida",
-                icon: "success"
-              });
+    let usuarios = JSON.parse(usuariosJSON);
 
-              setTimeout(() => {
-                window.location.replace("pages/home.html")
-              }, 1000);
+    let email = document.getElementById("user_email").value;
+    let password = document.getElementById("user_password").value;
 
-              // Armazenar indicador de login
-             localStorage.setItem('isLoggedIn', true);
-    
-           
+    if (email === "" || password === "") {
+        Swal.fire({
+            title: "Preencha todos os campos",
+            icon: "warning"
+        });
+    } else {
+        // Verificar se existe um usuário com o email fornecido
+        let usuarioEncontrado = usuarios.find(function(user) {
+            return user.emailUser === email;
+        });
+
+        if (usuarioEncontrado) {
+            // Se o usuário for encontrado, verificar se a senha está correta
+            if (usuarioEncontrado.passwordUser === password) {
+                Swal.fire({
+                    title: "Autenticação bem sucedida",
+                    icon: "success"
+                });
+
+                setTimeout(() => {
+                    window.location.replace("pages/home.html");
+                }, 1000);
+
+                // Armazenar indicador de login
+                localStorage.setItem('isLoggedIn', true);
+            } else {
+                Swal.fire({
+                    title: "Senha incorreta",
+                    icon: "error"
+                });
+            }
         } else {
             Swal.fire({
-                title: "Senha incorreta",
-                icon: "error"
-              });
+                title: "Email não cadastrado",
+                icon: "warning"
+            });
         }
-    } else {
-        Swal.fire({
-            title: "Email não cadastrado",
-            icon: "warning"
-          });
     }
-}
-
-
-
-
 });
 
-
-console.log(usuario.passwordUser)
 //Função para alterar a visibilidade do input de senha
-const btnVisibilityOFF = document.getElementById("visibility_off")
-btnVisibilityOFF.addEventListener("click", function(){
-    if(btnVisibilityOFF.src.endsWith("visibility_on.svg")){
-        btnVisibilityOFF.src = "assets/icons/visibility_off.svg"
-        document.getElementById("user_password").type = "password"
+const btnVisibilityOFF = document.getElementById("visibility_off");
+btnVisibilityOFF.addEventListener("click", function() {
+    if (btnVisibilityOFF.src.endsWith("visibility_on.svg")) {
+        btnVisibilityOFF.src = "assets/icons/visibility_off.svg";
+        document.getElementById("user_password").type = "password";
     } else {
-        btnVisibilityOFF.src = "assets/icons/visibility_on.svg"
-        document.getElementById("user_password").type = "text"
-    }})
+        btnVisibilityOFF.src = "assets/icons/visibility_on.svg";
+        document.getElementById("user_password").type = "text";
+    }
+});
 
-    // Verificar se o usuário está logado e redirecioná-lo para a página inicial
+// Verificar se o usuário está logado e redirecioná-lo para a página inicial
 document.addEventListener("DOMContentLoaded", function() {
     const isLoggedIn = localStorage.getItem('isLoggedIn');
 
